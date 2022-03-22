@@ -47,8 +47,9 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
+  const regex = `/${c}/g`;
   string.forEach(function(word){
-    let count = word.match(/e/g).length;
+    let count = word.match(regex).length;
     return count;
   });
  
