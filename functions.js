@@ -20,8 +20,17 @@
  */
 function sumOdds(numbers) {
   // Your code here
+  const initialValue = 0;
+
+  let array1 = numbers.filter(word => word % 2 !== 0);
+  console.log(array1)
+  const sumWithInitial = array1.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    initialValue
+  );
+  return sumWithInitial ;
+
 }
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
  * characterCount(string, c):
@@ -38,6 +47,11 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
+  string.forEach(function(word){
+    let count = word.match(/e/g).length;
+    return count;
+  });
+ 
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
