@@ -118,6 +118,8 @@ function afterX(numbers, x) {
  */
 function abbreviate(firstName, lastName) {
   // Your code here
+  let initial = firstName.charAt(0) + lastName.charAt(0);
+  return initial.toUpperCase();
 }
 // console.log(abbreviate("miss", "Stephane"));
 
@@ -133,8 +135,12 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+  if (string === string.toUpperCase()) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
 // console.log(isUpperCase("JCREW"));
 
 /**
@@ -149,6 +155,13 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  const finder = (element) => element == x;
+  if (numbers.findIndex(finder) == -1) {
+    return false;
+  } else {
+    return true;
+  }
+   
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
