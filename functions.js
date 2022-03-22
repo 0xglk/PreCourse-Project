@@ -23,7 +23,7 @@ function sumOdds(numbers) {
   const initialValue = 0;
 
   let array1 = numbers.filter(word => word % 2 !== 0);
-  console.log(array1)
+  
   const sumWithInitial = array1.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     initialValue
@@ -31,7 +31,6 @@ function sumOdds(numbers) {
   return sumWithInitial ;
 
 }
-
 /**
  * characterCount(string, c):
  * - receives a string and a character
@@ -47,12 +46,11 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
-  const regex = `/${c}/g`;
-  string.forEach(function(word){
-    let count = word.match(regex).length;
-    return count;
-  });
- 
+  let test = c;
+  let regex = new RegExp(test, 'gi');
+  let count = (string.match(regex)|| []).length;
+  console.log(count)
+  return(count);
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
@@ -74,8 +72,19 @@ function characterCount(string, c) {
  */
 function largestIncrement(numbers) {
   // Your code here
+  let index = 0 ; 
+  let collection = [];
+  numbers.sort(function(a, b){return b - a});
+
+  for (let index = 0; index <= numbers.length-2; index++) {
+    let add = numbers[index] - numbers[index+1];
+    collection.push(add);
+  }
+
+  collection.sort(function(a, b){return b - a});
+    return collection[0];
 }
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+// console.log(largestIncrement([1, 3, 7, 9, 12]));
 
 /**
  * afterX(numbers, x):
@@ -90,9 +99,13 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
+  numbers = numbers.filter(function (num) {
+    return num > x;
+  });
+  return numbers
 }
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
-
+afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
 /**
  * abbreviate(firstName, lastName):
  * - receives a first name and a last name
