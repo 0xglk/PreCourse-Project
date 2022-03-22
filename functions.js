@@ -105,7 +105,6 @@ function afterX(numbers, x) {
   return numbers
 }
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
-afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
 /**
  * abbreviate(firstName, lastName):
  * - receives a first name and a last name
